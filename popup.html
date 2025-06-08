@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Paint Toolbar</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-width: 320px;
+      min-height: 120px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .toolbar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+      gap: 6px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      margin: 8px;
+    }
+    .toolbar button {
+      border: none;
+      background: rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 8px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .toolbar button:hover {
+      background: rgba(103, 126, 234, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .toolbar button.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(103, 126, 234, 0.4);
+    }
+    .toolbar input[type="color"] {
+      border: none;
+      background: none;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      padding: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .toolbar input[type="range"] {
+      width: 80px;
+      height: 6px;
+      border-radius: 3px;
+      background: #ddd;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    .toolbar input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .toolbar label {
+      font-size: 11px;
+      color: #666;
+      font-weight: 500;
+      text-align: center;
+      grid-column: span 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .section-divider {
+      grid-column: 1 / -1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #ddd, transparent);
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <!-- Basic Drawing Tools -->
+    <button id="tool-brush" title="Brush (Freehand)">🖊️</button>
+    <button id="tool-line" title="Line">/</button>
+    <button id="tool-arrow" title="Arrow">➡️</button>
+    <button id="tool-rect" title="Rectangle">▭</button>
+    <button id="tool-circle" title="Circle">◯</button>
+    <button id="tool-eraser" title="Eraser">🧽</button>
+    <button id="tool-highlighter" title="Highlighter">🖍️</button>
+    
+    <!-- UI Mockup Tools -->
+    <button id="tool-ui-button" title="UI Button">🔘</button>
+    <button id="tool-ui-input" title="UI Input Field">📝</button>
+    <button id="tool-ui-card" title="UI Card">🃏</button>
+    <button id="tool-ui-navbar" title="UI Navigation">📋</button>
+    
+    <!-- Advanced Tools -->
+    <button id="tool-annotate" title="Add Annotation">💬</button>
+    <button id="tool-inspect" title="Inspect Element & Generate Prompt">🔍</button>
+    
+    <!-- Extension Toggle -->
+    <button id="extension-toggle" class="toggle-btn" title="Toggle Extension On/Off">❌ OFF</button>
+    
+    <!-- Controls -->
+    <button id="tool-undo" title="Undo">↶</button>
+    <button id="tool-redo" title="Redo">↷</button>
+    <button id="tool-clear" title="Clear Canvas">🗑️</button>
+    <label for="color-picker">🎨</label>
+    <input type="color" id="color-picker" value="#222222" title="Pick Color">
+    <label for="brush-size">🖌️</label>
+    <input type="range" id="brush-size" min="2" max="32" value="4" title="Brush Size">
+    
+    <!-- Screenshot Tools -->
+    <button id="tool-screenshot" title="Take Screenshot & Edit in New Tab">📸</button>
+    <button id="tool-screenshot-visible" title="Screenshot Visible Area">🖼️</button>
+    <button id="tool-screenshot-full" title="Screenshot Full Page">📄</button>
+    <button id="tool-copy-clipboard" title="Copy to Clipboard">📋</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

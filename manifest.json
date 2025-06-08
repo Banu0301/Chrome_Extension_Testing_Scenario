@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Live UI Sketcher & Web Annotator",
+  "version": "2.0",
+  "description": "Advanced UI mockup tool: Draw wireframes, annotate websites, inspect elements for design prompts, and create UI components directly over any webpage.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+"default_icon": {
+      "16": "icons/address-card.svg",
+      "32": "icons/address-card.svg",
+      "48": "icons/address-card.svg",
+      "128": "icons/address-card.svg"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ],
+"icons": {
+    "16": "icons/address-card.svg",
+    "32": "icons/address-card.svg",
+    "48": "icons/address-card.svg",
+    "128": "icons/address-card.svg"
+  }
+}

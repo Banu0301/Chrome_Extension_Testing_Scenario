@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot Extension Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: #667eea;
+        }
+        .demo-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .demo-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+        .demo-button:hover {
+            transform: translateY(-2px);
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .instructions h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .instructions ol {
+            margin: 10px 0;
+        }
+        .instructions li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Screenshot & Drawing Extension Test Page</h1>
+        
+        <div class="instructions">
+            <h3>📋 How to Test the Extension:</h3>
+            <ol>
+                <li>Install the extension in Chrome (Developer mode)</li>
+                <li>Click the extension icon in the toolbar</li>
+                <li>Try the different tools and features</li>
+                <li>Take screenshots and edit them in the new tab</li>
+                <li>Test undo/redo, copy to clipboard, and download features</li>
+            </ol>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>📸 Screenshot Tools</h3>
+                <p>• One-click screenshot capture<br>
+                • Visible area screenshot<br>
+                • Full page screenshot<br>
+                • Opens in new tab editor</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🖊️ Drawing Tools</h3>
+                <p>• Brush (freehand drawing)<br>
+                • Line, Arrow, Rectangle, Circle<br>
+                • Highlighter tool<br>
+                • Eraser with adjustable size</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🎨 Customization</h3>
+                <p>• Color picker<br>
+                • Adjustable brush size<br>
+                • Line thickness control<br>
+                • Multiple drawing modes</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>💾 Save & Export</h3>
+                <p>• Download as PNG<br>
+                • Copy to clipboard<br>
+                • Undo/Redo support<br>
+                • Clear canvas option</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>💬 Annotations</h3>
+                <p>• Add text annotations<br>
+                • Element inspection<br>
+                • UI mockup tools<br>
+                • Design prompt generation</p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>🚀 Advanced Features</h3>
+                <p>• Touch device support<br>
+                • Responsive design<br>
+                • Modern UI with glassmorphism<br>
+                • Keyboard shortcuts ready</p>
+            </div>
+        </div>
+
+        <div class="demo-buttons">
+            <button class="demo-button" onclick="alert('Click the extension icon to start!')">🎯 Start Drawing</button>
+            <button class="demo-button" onclick="alert('Use the screenshot tool from the extension popup!')">📸 Take Screenshot</button>
+            <button class="demo-button" onclick="alert('Try the annotation tool!')">💬 Add Annotation</button>
+        </div>
+
+        <div class="instructions">
+            <h3>✨ Key Features Implemented:</h3>
+            <ul>
+                <li>✅ One-click screenshot of visible or full page</li>
+                <li>✅ Opens screenshot in a new tab, like a canvas</li>
+                <li>✅ Drawing tools: Pen, shapes, text, arrows, highlighter</li>
+                <li>✅ Eraser & Undo/Redo support</li>
+                <li>✅ Save image after editing</li>
+                <li>✅ Color picker, line thickness</li>
+                <li>✅ Export as PNG or copy to clipboard</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactivity for testing
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Test page loaded! Extension should be available in the toolbar.');
+            
+            // Add some dynamic content for testing screenshots
+            setInterval(() => {
+                const time = new Date().toLocaleTimeString();
+                document.title = `Screenshot Test - ${time}`;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
